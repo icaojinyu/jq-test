@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo2</title>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box1 {
+      width: 300px;
+      height: 300px;
+      background: red;
+    }
+
+    .box2 {
+      width: 200px;
+      height: 200px;
+      background: yellow;
+    }
+
+    .box3 {
+      width: 100px;
+      height: 100px;
+      background: purple;
+    }
+  </style>
+</head>
+<body>
+<div class="box1">
+  <div class="box2">
+    <div class="box3">
+      <span id="text">我是文字</span>
+    </div>
+    <ul id="list">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+  </div>
+</div>
+<input type="text">
+<script>
+  $(function () {
+    // console.log($('#text').parent())
+    // console.log($('#text').parents())
+    // console.log($('#text').parentsUntil('body'))
+
+    // console.log($('.box1').children())
+    // console.log($('.box1').find('*'))
+
+    // console.log($('#list>li').eq(2).siblings())
+    // console.log($('#list>li').eq(2).next())
+    // console.log($('#list>li').eq(2).nextAll())
+
+    // console.log($('#list>li').first())
+    // console.log($('#list>li').last())
+
+    // console.log($('#list>li').not('li:eq(2)'))
+
+    $('input').focus(function () {
+      console.log('focused')
+    }).blur(function () {
+      console.log('blur')
+    })
+
+  })
+</script>
+</body>
+</html>
