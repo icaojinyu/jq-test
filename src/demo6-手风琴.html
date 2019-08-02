@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo6</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    ul#list {
+      width: 100%;
+      display: flex;
+    }
+
+    #list > li {
+      overflow: hidden;
+      position: relative;
+      height: 700px;
+    }
+
+    #list > li img {
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+</head>
+<body>
+<ul id="list">
+  <li><a href="#"><img src="imgs/01.jpg" alt=""></a></li>
+  <li><a href="#"><img src="imgs/02.jpg" alt=""></a></li>
+  <li><a href="#"><img src="imgs/03.jpg" alt=""></a></li>
+  <li><a href="#"><img src="imgs/04.jpg" alt=""></a></li>
+</ul>
+<script>
+  $(function () {
+    let clientW = $(window).width()
+    $('#list>li').css({width: clientW / 4}).hover(
+      function () {
+        $(this).stop().animate({width: clientW * .4}).siblings().stop().animate({width: clientW * .2})
+      },
+      function () {
+        $('#list>li').stop().animate({width: clientW * .25})
+      }
+    )
+  })
+</script>
+</body>
+</html>
