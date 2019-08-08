@@ -9,10 +9,10 @@
 <script>
   $(function () {
     $.ajax({
-      url:'https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg',
-      dataType:'jsonp',
-      jsonp:'jsonpCallback',// 与服务端约定的回调函数的key
-      data:{
+      url: 'https://c1.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg',
+      dataType: 'jsonp',
+      jsonp: 'jsonpCallback',// 与服务端约定的回调函数的key
+      data: {
         g_tk: 1928093487,
         inCharset: 'utf-8',
         outCharset: 'utf-8',
@@ -21,10 +21,9 @@
         platform: 'h5',
         uin: 0,
         needNewCode: 1
-      },
-      success(data){
-        console.log(data)
       }
+    }).then((res) => {
+      console.log(res)
     })
   })
 </script>
