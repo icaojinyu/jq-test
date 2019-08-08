@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo8-clone</title>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background: purple;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <span>我是span</span>
+</div>
+<script>
+  $('.box').click(function () {
+    alert('我是box')
+  })
+
+  // 传递true 表示深拷贝 会拷贝元素身上绑定的事件
+  let res = $('.box').clone(true)
+  console.log(res)
+
+  $('body').append(res)
+</script>
+</body>
+</html>
